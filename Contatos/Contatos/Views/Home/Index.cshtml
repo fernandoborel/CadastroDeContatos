@@ -1,8 +1,11 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model HomeModel
+
+@{
+    ViewData["Title"] = "Página inicial";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Bem vindo, @Model.Nome!</h1>
+    <span>E-mail: @Model.Email</span>
+    <p>Sistema de cadastro de contatos</p>
 </div>
