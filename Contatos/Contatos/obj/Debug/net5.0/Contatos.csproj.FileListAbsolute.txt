@@ -42,3 +42,7 @@ C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\
 C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\Contatos.genruntimeconfig.cache
 C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\ref\Contatos.dll
 C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\Contatos.csproj.CopyComplete
+C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\Razor\Views\Contato\Index.cshtml.g.cs
+C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\Razor\Views\Contato\Criar.cshtml.g.cs
+C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\Razor\Views\Contato\Editar.cshtml.g.cs
+C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\Razor\Views\Contato\ConfirmarExcluir.cshtml.g.cs
