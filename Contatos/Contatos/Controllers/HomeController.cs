@@ -14,11 +14,7 @@ namespace Contatos.Controllers
         
         public IActionResult Index()
         {
-            HomeModel home = new HomeModel();
-            home.Nome = "Fer";
-            home.Email = "fer@gmail.com";
-
-            return View(home);
+            return View();
         }
 
         public IActionResult Privacy()
