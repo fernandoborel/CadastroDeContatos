@@ -28,8 +28,9 @@
     }
 
     <h1 class="display-4">Listagem de contatos</h1>
-    <div class="table-responsive">
-        <table class="table table-hover">
+
+    <div class="text-left">
+        <table class="table" id="table-contatos">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -55,10 +56,14 @@
                                     <a role="button" class="btn btn-danger" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="ConfirmarExcluir">Excluir</a>
                                 </div>
                             </td>
-                        </tr>
-                    }
+                    </tr>
                 }
-            </tbody>
+            }
+            else
+            {
+                <tr class="odd"><td valign="top" colspan="5">Nenhum contato encontrado.</td></tr>
+            }
+        </tbody>
         </table>
     </div>
 </div>
