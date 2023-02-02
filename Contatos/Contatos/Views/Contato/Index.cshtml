@@ -11,37 +11,54 @@
     
     <br/>
 
-    <h1 class="display-4">Listagem de contatos</h1>
+    @if(TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close" title="fechar alerta">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Celular</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            @if(Model != null && Model.Any())
-            {
-                foreach (ContatoModel contato in Model)
+    @if(TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close" title="fechar alerta">X</button>
+            @TempData["MensagemErro"]
+        </div>   
+    }
+
+    <h1 class="display-4">Listagem de contatos</h1>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if(Model != null && Model.Any())
                 {
-                    <tr>
-                        <th scope="row">@contato.Id</th>
-                        <td>@contato.Nome</td>
-                        <td>@contato.Email</td>
-                        <td>@contato.Celular</td>
-                        <td>
-                            <div class="btn-group" role="group">
-                                <a role="button" class="btn btn-warning" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="Editar">Editar</a>
-                                <a role="button" class="btn btn-danger" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="ConfirmarExcluir">Excluir</a>
-                            </div>
-                        </td>
-                    </tr>
+                    foreach (ContatoModel contato in Model)
+                    {
+                        <tr>
+                            <th scope="row">@contato.Id</th>
+                            <td>@contato.Nome</td>
+                            <td>@contato.Email</td>
+                            <td>@contato.Celular</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a role="button" class="button-edit btn btn-warning" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="Editar">Editar</a>
+                                    <a role="button" class="btn btn-danger" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="ConfirmarExcluir">Excluir</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
                 }
-            }
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </div>
