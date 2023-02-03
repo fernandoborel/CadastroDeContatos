@@ -1,0 +1,29 @@
+﻿@model UsuarioModel
+
+@{
+    ViewData["title"] = "Excluir?";
+}
+
+<div class="text-center">
+    <h3>Deseja apagar o contato (@Model.Nome)?</h3>
+</div>
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close" title="fechar alerta">X</button>
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close" title="fechar alerta">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+
+<a class="btn btn-primary btn-block" role="button" asp-controller="Usuario" asp-action="Index">Cancelar exclusão</a>
+<a class="btn btn-danger btn-block" role="button" asp-controller="Usuario" asp-action="Apagar" asp-route-id="@Model.Id">Confirmar exclusão</a>

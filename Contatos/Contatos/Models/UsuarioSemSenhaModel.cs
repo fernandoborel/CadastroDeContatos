@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Contatos.Models
 {
-    public class UsuarioModel
+    public class UsuarioSemSenhaModel
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Nome obrigatório")]
@@ -15,10 +15,6 @@ namespace Contatos.Models
         [EmailAddress(ErrorMessage = "E-mail inválido!")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Perfil é obrigatório")]
-        public PerfilEnum Perfil { get; set; }
-        [Required(ErrorMessage = "Senha obrigatória")]
-        public string Senha { get; set; }
-        public DateTime DataCadastro { get; set; }
-        public DateTime? DataAtualizacao { get; set;}
+        public PerfilEnum? Perfil { get; set; }
     }
 }

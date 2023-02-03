@@ -18,5 +18,59 @@ namespace Contatos.Controllers
             List<UsuarioModel> usuarios = _usuarioRepositorio.BuscarTodos();
             return View(usuarios);
         }
+
+        public IActionResult Criar()
+        {
+            return View();
+        }
+
+        public IActionResult ConfirmarExcluir(int id)
+        {
+            UsuarioModel usuario = _usuarioRepositorio.ListarPorId(id);
+            return View(usuario);
+        }
+
+        public IActionResult Apagar(int id)
+        {
+            try
+            {
+                _usuarioRepositorio.Apagar(id);
+                TempData["MensagemSucesso"] = "Excluido com sucesso!";
+                return RedirectToAction("Index");
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, não foi possível excluir o usuário! Erro: {erro.Message}";
+                return RedirectToAction("Index");
+            }
+        }
+
+        public IActionResult Editar(int id)
+        {
+            UsuarioModel usuario = _usuarioRepositorio.ListarPorId(id);
+            return View(usuario);
+        }
+
+        [HttpPost]
+        public IActionResult Criar(UsuarioModel usuario)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _usuarioRepositorio.Adicionar(usuario);
+                    TempData["MensagemSucesso"] = "Usuário cadastrado!";
+                    return RedirectToAction("Index");
+                }
+
+                return View(usuario);
+
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, não foi possível cadastrar o usuário! Erro: {erro.Message}";
+                return RedirectToAction("Index");
+            }
+        }
     }
 }
