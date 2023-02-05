@@ -82,3 +82,5 @@ C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\
 C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\Razor\Views\Usuario\Criar.cshtml.g.cs
 C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\Razor\Views\Usuario\ConfirmarExcluir.cshtml.g.cs
 C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\Razor\Views\Usuario\Editar.cshtml.g.cs
+C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
+C:\Users\Fernando\Desktop\CadastrodeContatos\Contatos\Contatos\obj\Debug\net5.0\Razor\Views\Shared\_LayoutDeslogada.cshtml.g.cs

@@ -15,6 +15,11 @@ namespace Contatos.Repositorio
             _bancoContext = bancoContext;
         }
 
+        public UsuarioModel BuscaPorLogin(string login)
+        {
+            return _bancoContext.Usuarios.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper());
+        }
+
         public UsuarioModel Adicionar(UsuarioModel usuario)
         {
             //gravar no banco
