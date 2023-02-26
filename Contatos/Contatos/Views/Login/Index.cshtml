@@ -5,6 +5,14 @@
     ViewData["Title"] = "Login";
 }
 
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close" title="fechar alerta">X</button>
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
 @if (TempData["MensagemErro"] != null)
 {
     <div class="alert alert-danger" role="alert">
@@ -25,5 +33,11 @@
         <input type="password" asp-for="Senha" class="form-control" id="senha" placeholder="Senha">
         @Html.ValidationMessageFor(x => x.Senha)
     </div>
+
+    <p class="mb-4 text-sm mx-auto">
+        Esqueceu a senha?
+        <a asp-action="RedefinirSenha" asp-controller="Login" class="text-primary text-gradient font-weight-bold">Redefinir minha senha</a>
+    </p>
+
     <button type="submit" class="btn btn-primary btn-block">Entrar</button>
 </form>
