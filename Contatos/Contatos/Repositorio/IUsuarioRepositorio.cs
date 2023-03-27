@@ -11,6 +11,7 @@ namespace Contatos.Repositorio
         List<UsuarioModel> BuscarTodos();
         UsuarioModel Adicionar(UsuarioModel contato);
         UsuarioModel Atualizar(UsuarioModel contato);
+        UsuarioModel AlterarSenha(AlterarSenhaModel alterarSenhaModel);
         bool Apagar(int id);
     }
 }
