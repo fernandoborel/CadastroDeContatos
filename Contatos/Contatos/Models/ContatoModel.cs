@@ -13,5 +13,9 @@ namespace Contatos.Models
         [Required(ErrorMessage = "Celular obrigatório")]
         [Phone(ErrorMessage = "Número inválido!")]
         public string Celular { get; set;}
+
+        public int? UsuarioId { get; set; }
+
+        public UsuarioModel Usuario { get; set; }
     }
 }

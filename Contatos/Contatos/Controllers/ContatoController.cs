@@ -1,4 +1,5 @@
 ﻿using Contatos.Filters;
+using Contatos.Helper;
 using Contatos.Models;
 using Contatos.Repositorio;
 using Microsoft.AspNetCore.Mvc;
@@ -10,15 +11,21 @@ namespace Contatos.Controllers
     public class ContatoController : Controller
     {
         private readonly IContatoRepositorio _contatoRepositorio;
-        public ContatoController(IContatoRepositorio contatoRepositorio)
+        private readonly ISessao _sessao;
+
+        public ContatoController(IContatoRepositorio contatoRepositorio,
+                                 ISessao sessao)
         {
             _contatoRepositorio = contatoRepositorio;
+            _sessao = sessao;
         }
 
         public IActionResult Index()
         {
-           List<ContatoModel> contatos = _contatoRepositorio.BuscarTodos();
-            return View(contatos);
+           UsuarioModel usuarioLogado = _sessao.BuscarSessaoDoUsuario();
+           List<ContatoModel> contatos = _contatoRepositorio.BuscarTodos(usuarioLogado.Id);
+           
+           return View(contatos);
         }
 
         public IActionResult Criar()
