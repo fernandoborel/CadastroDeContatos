@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Bogus" Version="35.6.5" />
     <PackageReference Include="coverlet.collector" Version="6.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.6" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="xunit" Version="2.9.3" />
@@ -22,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Contatos.Domain\Contatos.Domain.csproj" />
+    <ProjectReference Include="..\Contatos.Api\Contatos.Api.csproj" />
   </ItemGroup>
 
 </Project>
