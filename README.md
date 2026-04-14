@@ -1,4 +1,4 @@
-# SISTEMA AINDA EM CONSTRUÇÃO!!
+# Api de cadastro de contatos
 
-## CadastroDeContatos
-Sistema de cadastro de contatos, utilizando ASP .Net MVC 5
+## Api refatorada para a versão .NET 10, seguindo as boas práticas do DDD (Domain-Driven Design)
+
