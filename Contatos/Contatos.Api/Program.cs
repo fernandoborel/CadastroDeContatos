@@ -1,4 +1,5 @@
 using Contatos.Api.Extensions;
+using Contatos.Api.Middlewares;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +17,9 @@ builder.Services.AddDomainService(builder.Configuration);
 
 var app = builder.Build();
 
-app.UseSwagger(); //Swagger
+app.UseMiddleware<ErrorHandlingMiddleware>();
+
+app.UseSwagger();
 app.UseSwaggerUI(); //Swagger
 
 //Scalar
@@ -29,3 +32,5 @@ app.MapOpenApi();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
+
+public partial class Program { }
