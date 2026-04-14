@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver_container
+    ports:
+      - "1434:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Coti@2026
+    restart: unless-stopped
+    networks:
+      - coti_network
+    volumes:
+      - sql_data:/var/opt/mssql
+
+  api:
+    container_name: contatos_api_container
+    build:
+      context: .
+      dockerfile: Contatos.Api/Dockerfile 
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=CadastroContatosDB;User Id=sa;Password=Coti@2026;TrustServerCertificate=True
+    depends_on:
+      - sqlserver
+    networks:
+      - coti_network
+
+volumes:
+  sql_data:
+
+networks:
+  coti_network:
+    driver: bridge
