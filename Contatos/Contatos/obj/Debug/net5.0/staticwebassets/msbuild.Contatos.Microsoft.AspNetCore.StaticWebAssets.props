@@ -4,7 +4,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>css\site.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -20,7 +20,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>favicon.ico</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -36,7 +36,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>js\site.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -52,7 +52,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-grid.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -68,7 +68,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-grid.css.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -84,7 +84,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-grid.min.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -100,7 +100,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-grid.min.css.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -116,7 +116,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-reboot.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -132,7 +132,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-reboot.css.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -148,7 +148,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-reboot.min.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -164,7 +164,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-reboot.min.css.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -180,7 +180,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -196,7 +196,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap.css.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -212,7 +212,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap.min.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -228,7 +228,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap.min.css.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -244,7 +244,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.bundle.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -260,7 +260,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.bundle.js.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -276,7 +276,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.bundle.min.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -292,7 +292,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.bundle.min.js.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -308,7 +308,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -324,7 +324,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.js.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -340,7 +340,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.min.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -356,7 +356,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.min.js.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -372,7 +372,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\LICENSE</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -388,7 +388,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -404,7 +404,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -420,7 +420,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation-unobtrusive\LICENSE.txt</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -436,7 +436,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation\dist\additional-methods.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -452,7 +452,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation\dist\additional-methods.min.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -468,7 +468,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation\dist\jquery.validate.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -484,7 +484,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation\dist\jquery.validate.min.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -500,7 +500,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation\LICENSE.md</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -516,7 +516,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery\dist\jquery.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -532,7 +532,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery\dist\jquery.min.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -548,7 +548,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery\dist\jquery.min.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -564,7 +564,7 @@
       <SourceType>Package</SourceType>
       <SourceId>Contatos</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Contatos</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery\LICENSE.txt</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
