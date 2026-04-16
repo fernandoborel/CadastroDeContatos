@@ -5,7 +5,8 @@ namespace Contatos.Infra.Data.Repositories;
 
 public class UnitOfWork(AppDbContext context) : IUnitOfWork
 {
-    public IUsuarioRepository UsuarioRepository => new UsuarioRepository(context);
+    private IUsuarioRepository? _usuarioRepository;
+    public IUsuarioRepository UsuarioRepository => _usuarioRepository ??= new UsuarioRepository(context);
 
     public async Task SaveChangesAsync()
         => await context.SaveChangesAsync();
