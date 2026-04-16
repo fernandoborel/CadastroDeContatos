@@ -14,6 +14,10 @@ public class UsuarioConfiguration : IEntityTypeConfiguration<Usuario>
             .IsRequired()
             .HasMaxLength(100);
 
+        builder.Property(u => u.Senha)
+            .IsRequired()
+            .HasMaxLength(255);
+
         builder.OwnsOne(u => u.Email, email =>
         {
             email.Property(e => e.Endereco)

@@ -9,26 +9,27 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddRouting(map => map.LowercaseUrls = true);
 
-builder.Services.AddEndpointsApiExplorer(); //Swagger
-builder.Services.AddSwaggerGen(); //Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfraStructure(builder.Configuration);
 builder.Services.AddDomainService(builder.Configuration);
+builder.Services.AddJwtAuthentication(builder.Configuration);
 
 var app = builder.Build();
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseSwagger();
-app.UseSwaggerUI(); //Swagger
+app.UseSwaggerUI();
 
-//Scalar
 app.MapScalarApiReference(options =>
 {
     options.WithTheme(ScalarTheme.Mars);
 });
 
 app.MapOpenApi();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
