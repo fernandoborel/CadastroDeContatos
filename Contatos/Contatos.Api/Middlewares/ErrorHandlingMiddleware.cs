@@ -1,4 +1,6 @@
-﻿namespace Contatos.Api.Middlewares;
+﻿using FluentValidation;
+
+namespace Contatos.Api.Middlewares;
 
 public class ErrorHandlingMiddleware
 {
@@ -23,12 +25,15 @@ public class ErrorHandlingMiddleware
 
     private static Task HandleException(HttpContext context, Exception ex)
     {
-        //Por default o erro será tratado como 500 (INTERNAL SERVER ERROR)
         var statusCode = StatusCodes.Status500InternalServerError;
         var message = "Erro interno de servidor";
 
-        //Regras customizadas
-        if (ex is ArgumentException)
+        if (ex is ValidationException validationEx)
+        {
+            statusCode = StatusCodes.Status400BadRequest;
+            message = validationEx.Errors.First().ErrorMessage;
+        }
+        else if (ex is ArgumentException)
         {
             statusCode = StatusCodes.Status400BadRequest;
             message = ex.Message;
@@ -39,14 +44,13 @@ public class ErrorHandlingMiddleware
             message = ex.Message;
         }
 
-        //Retorna a repsosta em JSON
         context.Response.ContentType = "application/json";
         context.Response.StatusCode = statusCode;
 
         var response = new
         {
             status = statusCode,
-            error = ex.Message,
+            error = message,
         };
 
         return context.Response.WriteAsJsonAsync(response);

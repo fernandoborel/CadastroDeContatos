@@ -4,18 +4,36 @@ using Contatos.Domain.Entities;
 using Contatos.Domain.Interfaces.Repositories;
 using Contatos.Domain.Interfaces.Services;
 using Contatos.Domain.ValueObjects;
+using FluentValidation;
 
 namespace Contatos.Domain.Services;
 
-public class UsuarioService(IUnitOfWork uow) : IUsuarioService
+public class UsuarioService(
+    IUnitOfWork uow,
+    IValidator<UsuarioRequest> criarValidator,
+    IValidator<AtualizarUsuarioRequest> atualizarValidator) : IUsuarioService
 {
+    public async Task<UsuarioResponse> AtualizarAsync(AtualizarUsuarioRequest request)
+    {
+        await atualizarValidator.ValidateAndThrowAsync(request);
+
+        var usuario = await uow.UsuarioRepository.FirstOrDefaultAsync(c => c.Id == request.Id);
+        if (usuario == null)
+            throw new ApplicationException("Usuário não encontrado.");
+
+        usuario.Nome = request.Nome;
+
+        await uow.UsuarioRepository.UpdateAsync(usuario);
+        await uow.SaveChangesAsync();
+
+        return ToResponse(usuario);
+    }
+
     public async Task<UsuarioResponse> CriarAsync(UsuarioRequest request)
     {
-        //Verificar o nome do cliente
-        if (string.IsNullOrEmpty(request.Nome) || request.Nome.Trim().Length < 6)
-            throw new ArgumentException("Nome do cliente é obrigatório e deve ter pelo menos 6 caracteres.");
+        await criarValidator.ValidateAndThrowAsync(request);
 
-        //Capturar o email do cliente (ValueObject já executa a validação)
+        //Capturar o email do usuário (ValueObject já executa a validação)
         var email = new Email(request.Email);
 
         //Regra: Email único no banco de dados
@@ -23,11 +41,12 @@ public class UsuarioService(IUnitOfWork uow) : IUsuarioService
         if (existente > 0)
             throw new ApplicationException("O email informado já está cadastrado. Tente outro.");
 
-        //Criando o cliente
+        //Criando o usuário
         var usuario = new Usuario
         {
             Nome = request.Nome,
-            Email = email
+            Email = email,
+            Senha = BCrypt.Net.BCrypt.HashPassword(request.Senha)
         };
 
         //Salvando no banco de dados
@@ -35,6 +54,20 @@ public class UsuarioService(IUnitOfWork uow) : IUsuarioService
         await uow.SaveChangesAsync();
 
         //retornar os dados
+        return ToResponse(usuario);
+    }
+
+    public async Task<UsuarioResponse> AtualizarStatusAsync(AtualizarStatusUsuarioRequest request)
+    {
+        var usuario = await uow.UsuarioRepository.FirstOrDefaultAsync(c => c.Id == request.Id);
+        if (usuario == null)
+            throw new ApplicationException("Usuário não encontrado.");
+
+        usuario.Ativo = request.Ativo;
+
+        await uow.UsuarioRepository.UpdateAsync(usuario);
+        await uow.SaveChangesAsync();
+
         return ToResponse(usuario);
     }
 
@@ -48,12 +81,33 @@ public class UsuarioService(IUnitOfWork uow) : IUsuarioService
         return ToResponse(usuario);
     }
 
+    public async Task<PagedResponse<UsuarioResponse>> ObterTodosAsync(int pagina, int tamanhoPagina)
+    {
+        if (pagina < 1)
+            throw new ArgumentException("A página deve ser maior que zero.");
+
+        if (tamanhoPagina < 1)
+            throw new ArgumentException("O tamanho da página deve ser maior que zero.");
+
+        var (data, total) = await uow.UsuarioRepository.GetPageAsync(pagina, tamanhoPagina);
+
+        var totalPaginas = (int)Math.Ceiling((double)total / tamanhoPagina);
+
+        return new PagedResponse<UsuarioResponse>(
+            data.Select(ToResponse),
+            total,
+            pagina,
+            tamanhoPagina,
+            totalPaginas
+        );
+    }
+
     private UsuarioResponse ToResponse(Usuario usuario)
     {
         return new UsuarioResponse(
                 usuario.Id,
                 usuario.Nome,
-                usuario.Email.Endereco,
+                usuario.Email?.Endereco ?? string.Empty,
                 usuario.Ativo,
                 usuario.DataCadastro
             );
