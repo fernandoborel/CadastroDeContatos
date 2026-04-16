@@ -10,18 +10,35 @@ builder.Services.AddOpenApi();
 builder.Services.AddRouting(map => map.LowercaseUrls = true);
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerWithJwt();
 
 builder.Services.AddInfraStructure(builder.Configuration);
 builder.Services.AddDomainService(builder.Configuration);
 builder.Services.AddJwtAuthentication(builder.Configuration);
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseSwagger();
-app.UseSwaggerUI();
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "CadastroDeContatos API v1");
+    options.RoutePrefix = "swagger";
+});
+
+app.UseCors();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapScalarApiReference(options =>
 {
@@ -29,8 +46,6 @@ app.MapScalarApiReference(options =>
 });
 
 app.MapOpenApi();
-app.UseAuthentication();
-app.UseAuthorization();
 app.MapControllers();
 app.Run();
 
