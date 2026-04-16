@@ -59,6 +59,25 @@ public static class DependencyInjection
                     IssuerSigningKey = new SymmetricSecurityKey(
                         Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"]!))
                 };
+
+                options.Events = new JwtBearerEvents
+                {
+                    OnAuthenticationFailed = ctx =>
+                    {
+                        Console.WriteLine($"[JWT] Falha na autenticação: {ctx.Exception.GetType().Name} - {ctx.Exception.Message}");
+                        return Task.CompletedTask;
+                    },
+                    OnTokenValidated = ctx =>
+                    {
+                        Console.WriteLine($"[JWT] Token válido para: {ctx.Principal?.Identity?.Name}");
+                        return Task.CompletedTask;
+                    },
+                    OnChallenge = ctx =>
+                    {
+                        Console.WriteLine($"[JWT] Challenge disparado. Erro: {ctx.Error} | Descrição: {ctx.ErrorDescription}");
+                        return Task.CompletedTask;
+                    }
+                };
             });
 
         return services;
