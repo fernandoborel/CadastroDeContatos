@@ -77,7 +77,7 @@ O `HttpClient` vem do `factory.CreateClient()` e o `Faker` é inicializado com `
 | Método | Status esperado | Cenário |
 |---|---|---|
 | `Criar_QuandoDadosValidos_DeveRetornar201ComCorpoCorreto` | `201 Created` | Payload válido, verifica corpo completo da resposta |
-| `Criar_QuandoNomeInvalido_DeveRetornar400` | `400 Bad Request` | Nome com menos de 6 caracteres (`"abc"`) |
+| `Criar_QuandoNomeInvalido_DeveRetornar400` | `400 Bad Request` | Nome com menos de 4 caracteres (`"abc"`) |
 | `Criar_QuandoEmailInvalido_DeveRetornar400` | `400 Bad Request` | Email sem formato válido (`"email_invalido"`) |
 | `Criar_QuandoEmailJaCadastrado_DeveRetornar422` | `422 Unprocessable Entity` | Duas requisições com o mesmo e-mail |
 
@@ -94,7 +94,9 @@ O `422` é intencional: a regra de negócio de e-mail duplicado lança `Applicat
 
 ---
 
-### GET `/api/usuarios/obter/{email}`
+### GET `/api/usuarios/obter?email=`
+
+> ⚠️ O email é passado como **query string** (`?email=`) e não como segmento de rota (`/{email}`), pois o caractere `@` e o `.` no final causariam problemas de roteamento no ASP.NET Core.
 
 | Método | Status esperado | Cenário |
 |---|---|---|
@@ -102,6 +104,30 @@ O `422` é intencional: a regra de negócio de e-mail duplicado lança `Applicat
 | `Obter_QuandoUsuarioNaoExiste_DeveRetornar422` | `422 Unprocessable Entity` | Busca por e-mail que não existe |
 
 O teste de `200` tem uma dependência intencional de outra rota: ele faz um POST antes do GET para garantir que o usuário existe. Isso é natural em testes de integração — o fluxo reflete o uso real da API.
+
+---
+
+### PUT `/api/usuarios/atualizar/{id}`
+
+| Método | Status esperado | Cenário |
+|---|---|---|
+| `Atualizar_QuandoDadosValidos_DeveRetornar200ComNomeAtualizado` | `200 OK` | Cria via POST e atualiza o nome, verifica o retorno |
+| `Atualizar_QuandoNomeInvalido_DeveRetornar400` | `400 Bad Request` | Nome com menos de 4 caracteres (`"ab"`) |
+| `Atualizar_QuandoIdNaoExiste_DeveRetornar422` | `422 Unprocessable Entity` | `Guid.NewGuid()` inexistente no banco |
+
+O `id` vem exclusivamente da URL. O body contém apenas `Nome`, eliminando a ambiguidade de IDs conflitantes entre rota e corpo.
+
+---
+
+### PUT `/api/usuarios/atualizar-status/{id}`
+
+> O endpoint foi nomeado `atualizar-status` (e não `inativar`) porque a operação suporta tanto inativar (`Ativo = false`) quanto reativar (`Ativo = true`).
+
+| Método | Status esperado | Cenário |
+|---|---|---|
+| `AtualizarStatus_QuandoInativar_DeveRetornar200ComAtivoFalso` | `200 OK` | Cria usuário ativo e inativa, verifica `Ativo = false` |
+| `AtualizarStatus_QuandoReativar_DeveRetornar200ComAtivoVerdadeiro` | `200 OK` | Inativa e depois reativa, verifica `Ativo = true` |
+| `AtualizarStatus_QuandoIdNaoExiste_DeveRetornar422` | `422 Unprocessable Entity` | `Guid.NewGuid()` inexistente no banco |
 
 ---
 
@@ -123,5 +149,7 @@ O `MigrateAsync` cria o banco `CadastroContatosDB_Tests` automaticamente (se o u
 | Endpoint | Método | Testes |
 |---|---|---|
 | `/api/usuarios/criar` | POST | 4 |
-| `/api/usuarios/obter/{email}` | GET | 2 |
-| **Total** | | **6** |
+| `/api/usuarios/obter?email=` | GET | 2 |
+| `/api/usuarios/atualizar/{id}` | PUT | 3 |
+| `/api/usuarios/atualizar-status/{id}` | PUT | 3 |
+| **Total** | | **12** |
