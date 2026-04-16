@@ -11,6 +11,7 @@ namespace Contatos.Api.Controllers;
 [ApiController]
 public class UsuariosController(IUsuarioService service) : ControllerBase
 {
+    [AllowAnonymous]
     [ProducesResponseType(typeof(UsuarioResponse), 201)]
     [HttpPost("criar")]
     public async Task<IActionResult> Criar([FromBody] UsuarioRequest request)
